@@ -17,7 +17,7 @@ public class UIPatientMenu {
     do {
       System.out.println("\n\n");
       System.out.println("Patient");
-      System.out.println("Welcome: " + UIMenu.patientLogged);
+      System.out.println("Welcome: " + UIMenu.patientLogged.getName());
       System.out.println("1. Book an appointment");
       System.out.println("2. My Appointments");
       System.out.println("0. Logout");
@@ -30,6 +30,7 @@ public class UIPatientMenu {
         showBookAppointmentMenu();
         break;
       case 2:
+        showPatientAppointments();
         break;
       case 0:
         UIMenu.showMenu();
@@ -88,6 +89,7 @@ public class UIPatientMenu {
         UIMenu.patientLogged.addAppointmentDoctors(doctorSelected,
             doctorSelected.getAvailableAppointments().get(indexDate).getDate(null),
             doctorSelected.getAvailableAppointments().get(indexDate).getTime());
+        showBookAppointmentMenu();
     } while (response != 0);
   }
 
