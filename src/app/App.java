@@ -1,7 +1,5 @@
 package app;
 
-import java.util.Date;
-
 import app.model.Doctor;
 import app.model.Patient;
 import app.model.User;
@@ -10,9 +8,6 @@ public class App {
     public static void main(String[] args) throws Exception {
 
         Doctor myDoctor = new Doctor("Edwin Dominguez", "edominguez@hotmail.com");
-        myDoctor.addAvailableAppintment(new Date(), "4pm");
-        myDoctor.addAvailableAppintment(new Date(), "10am");
-        myDoctor.addAvailableAppintment(new Date(), "1pm");
 
         System.out.println(myDoctor);
 
