@@ -12,7 +12,6 @@ public class Doctor extends User {
 
   public Doctor(String name, String email) {
     super(name, email);
-    System.out.println("Nombre del doctor: " + name);
   }
 
   // Behavior
@@ -67,11 +66,11 @@ public class Doctor extends User {
       this.id = id;
     }
 
-    public Date getDate() {
+    public Date getDate(String DATE) {
       return date;
     }
 
-    public String getDate(String DATE) {
+    public String getDate() {
       return format.format(date);
     }
 

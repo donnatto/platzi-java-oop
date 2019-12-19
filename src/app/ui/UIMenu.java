@@ -27,7 +27,6 @@ public class UIMenu {
 
       Scanner sc = new Scanner(System.in);
       response = Integer.valueOf(sc.nextLine());
-      sc.close();
 
       switch (response) {
         case 1:
@@ -68,7 +67,6 @@ public class UIMenu {
       System.out.println("Insert your email: [a@a.com]");
       Scanner sc = new Scanner(System.in);
       String email = sc.nextLine();
-      sc.close();
 
       if (userType == 1) {
         for (Doctor d: doctors) {
@@ -77,6 +75,7 @@ public class UIMenu {
             // Obtener datos de usuario logeado
             doctorLogged = d;
             // Show Doctor Menu
+            UIDoctorMenu.showDoctorMenu();
           }
         }
       }

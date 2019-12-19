@@ -24,11 +24,10 @@ public class UIDoctorMenu {
 
       Scanner sc = new Scanner(System.in);
       response = Integer.valueOf(sc.nextLine());
-      sc.close();
 
       switch (response) {
         case 1:
-
+          showAddAvailableAppointmentsMenu();
           break;
         case 2:
           break;
@@ -58,8 +57,9 @@ public class UIDoctorMenu {
       response = Integer.valueOf(sc.nextLine());
 
       if (response > 0 && response < 4) {
+        // 1, 2, 3
         int monthSelected = response;
-        System.out.println(monthSelected + ". " + UIMenu.MONTHS[monthSelected]);
+        System.out.println(monthSelected + ". " + UIMenu.MONTHS[monthSelected - 1]);
 
         System.out.println("Insert the date available: [dd/mm/yyyy]");
         String date = sc.nextLine();
@@ -84,7 +84,6 @@ public class UIDoctorMenu {
 
       } else if (response == 0) {
         showDoctorMenu();
-        sc.close();
       }
 
     } while (response != 0);

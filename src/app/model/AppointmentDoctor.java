@@ -5,13 +5,18 @@ import java.util.Date;
 /**
  * AppointmentDoctor
  */
-public class AppointmentDoctor {
+public class AppointmentDoctor implements IScheludable {
 
   private int id;
   private Patient patient;
   private Doctor doctor;
   private Date date;
   private String time;
+
+  public AppointmentDoctor(Patient patient, Doctor doctor) {
+    this.patient = patient;
+    this.doctor = doctor;
+  }
 
   public int getId() {
     return id;
@@ -46,10 +51,16 @@ public class AppointmentDoctor {
   }
 
   public String getTime() {
-    return time;
+    return time + " hrs.";
   }
 
   public void setTime(String time) {
+    this.time = time;
+  }
+
+  @Override
+  public void schedule(Date date, String time) {
+    this.date = date;
     this.time = time;
   }
 
